@@ -9,7 +9,7 @@ const AiBot = () => {
       const container = document.getElementById('chat-tab-content');
       if (container && !container.querySelector('script')) {
         const script = document.createElement('script');
-        script.src = "https://app.dante-ai.com/bubble-embed.js?kb_id=aeb6a0ef-b1b0-4217-a929-c4585d481a0c&token=d7b5c046-0e35-4144-8d43-fa669c5a1691&modeltype=gpt-4-omnimodel-mini&tabs=false";
+        script.src = "https://app.dante-ai.com/bubble-embed.js?kb_id=688327b4-a351-4ddc-bd65-b8e8edff3702&token=777fea7b-9237-49c4-bf5c-e6883e59e912&modeltype=gpt-4-omnimodel-mini&tabs=false";
         script.async = true;
         container.appendChild(script);
       }
