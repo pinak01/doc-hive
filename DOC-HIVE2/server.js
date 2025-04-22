@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const cors = require('cors'); // Import cors
 const app = express();
-const port = 5000;
+const port = 5001;
 
 // Enable CORS for all routes
 app.use(cors());
