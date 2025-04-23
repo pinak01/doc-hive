@@ -22,13 +22,19 @@ const AppointmentBooking = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const doctorResponse = await fetch("/doctors.json");
+        const doctorResponse = await fetch("http://localhost:5001/api/doctors", {
+                                            method: 'GET',
+                                            headers: { 'Content-Type': 'application/json' }
+                                          });
         if (!doctorResponse.ok) throw new Error("Error fetching doctors");
 
         const doctorData = await doctorResponse.json();
         setDoctors(doctorData);
 
-        const appointmentResponse = await fetch("/appointments.json");
+        const appointmentResponse = await fetch("http://localhost:5001/api/appointments", {
+                                            method: 'GET',
+                                            headers: { 'Content-Type': 'application/json' }
+                                          });
         if (!appointmentResponse.ok) throw new Error("successful!");
 
         const appointmentData = await appointmentResponse.json();
@@ -71,7 +77,7 @@ const AppointmentBooking = () => {
     };
 
     try {
-      const response = await fetch("http://localhost:3500/appointments", {
+      const response = await fetch("http://localhost:5001/api/appointments", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(appointmentData),

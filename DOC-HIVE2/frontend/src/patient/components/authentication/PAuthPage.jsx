@@ -27,7 +27,7 @@ const PAuthPage = () => {
     try {
       if (isLogin) {
         // Fetch users and check for matching email and password
-        const response = await fetch('https://90e7-122-187-117-179.ngrok-free.app/users');
+        const response = await fetch('http://localhost:5001/api/users');
         if (!response.ok) throw new Error('Failed to fetch users');
         
         const users = await response.json();
@@ -42,7 +42,7 @@ const PAuthPage = () => {
         }
       } else {
         // Sign-up: Check if the user already exists
-        const response = await fetch('https://90e7-122-187-117-179.ngrok-free.app/users');
+        const response = await fetch('http://localhost:5001/api/users');
         if (!response.ok) throw new Error('Failed to fetch users');
 
         const users = await response.json();
@@ -59,7 +59,7 @@ const PAuthPage = () => {
           name: formData.name
         };
 
-        const postResponse = await fetch('https://90e7-122-187-117-179.ngrok-free.app/users', {
+        const postResponse = await fetch('http://localhost:5001/api/users', {
           method: 'PATCH', // Using PATCH to merge new user into existing users
           headers: {
             'Content-Type': 'application/json',

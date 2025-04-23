@@ -12,7 +12,10 @@ const MapComponent = ({ doctorType }) => {
   const [selectedDepartments, setSelectedDepartments] = useState([]);
 
   useEffect(() => {
-    fetch("/doctors.json")
+    fetch("http://localhost:5001/api/doctors/", {
+      method: 'GET',
+      headers: { 'Content-Type': 'application/json' }
+    })
       .then((response) => response.json())
       .then((data) => {
         setDoctors(data);

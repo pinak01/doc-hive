@@ -29,7 +29,7 @@ const DAuthPage = () => {
 
     if (isLogin) {
       // Login: send only doctorID and password
-      fetch('http://localhost:4000/login', {
+      fetch('http://localhost:5001/api/doctors/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -56,7 +56,7 @@ const DAuthPage = () => {
         });
     } else {
       // Sign up: send full form data
-      fetch('http://localhost:4000/signup', {
+      fetch('http://localhost:5001/api/doctors/signup', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
@@ -93,7 +93,7 @@ const DAuthPage = () => {
       <div className="w-full max-w-md">
         <div className="flex items-center justify-center mb-8">
           <Activity className="h-8 w-8 text-blue-700 mr-2" />
-          <span className="text-xl font-bold text-blue-900">DocHive</span>
+          <span className="text-xl font-bold text-blue-900">DOC HIVE</span>
         </div>
         
         <div className="bg-blue-100 rounded-lg shadow-xl p-8">
