@@ -22,7 +22,7 @@ const AppointmentBooking = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const doctorResponse = await fetch("http://localhost:5001/api/doctors", {
+        const doctorResponse = await fetch("https://doc-hive-backend.vercel.app/api/doctors", {
                                             method: 'GET',
                                             headers: { 'Content-Type': 'application/json' }
                                           });
@@ -31,7 +31,7 @@ const AppointmentBooking = () => {
         const doctorData = await doctorResponse.json();
         setDoctors(doctorData);
 
-        const appointmentResponse = await fetch("http://localhost:5001/api/appointments", {
+        const appointmentResponse = await fetch("https://doc-hive-backend.vercel.app/api/appointments", {
                                             method: 'GET',
                                             headers: { 'Content-Type': 'application/json' }
                                           });
@@ -77,7 +77,7 @@ const AppointmentBooking = () => {
     };
 
     try {
-      const response = await fetch("http://localhost:5001/api/appointments", {
+      const response = await fetch("https://doc-hive-backend.vercel.app/api/appointments", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(appointmentData),

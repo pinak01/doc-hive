@@ -22,6 +22,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/api/doctors', doctorRoutes);
 app.use('/api/users', patientRoutes);
 app.use('/api/appointments', appointmentRoutes);
+app.get('/', (req, res) => {
+  res.json({ message: 'API is running' });
+});
 
 // Export for serverless functions
 module.exports = app;

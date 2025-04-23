@@ -12,7 +12,7 @@ const MapComponent = ({ doctorType }) => {
   const [selectedDepartments, setSelectedDepartments] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5001/api/doctors/", {
+    fetch("https://doc-hive-backend.vercel.app/api/doctors/", {
       method: 'GET',
       headers: { 'Content-Type': 'application/json' }
     })

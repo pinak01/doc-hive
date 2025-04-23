@@ -29,7 +29,7 @@ const DAuthPage = () => {
 
     if (isLogin) {
       // Login: send only doctorID and password
-      fetch('http://localhost:5001/api/doctors/login', {
+      fetch('https://doc-hive-backend.vercel.app/api/doctors/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -58,7 +58,7 @@ const DAuthPage = () => {
         });
     } else {
       // Sign up: send full form data
-      fetch('http://localhost:5001/api/doctors/signup', {
+      fetch('https://doc-hive-backend.vercel.app/api/doctors/signup', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
